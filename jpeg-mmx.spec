@@ -2,12 +2,12 @@
 Summary:	jpeg mmx
 Summary(pl):	jpeg mmx
 Name:		jpeg-mmx
-Version:	0.1.4
-Release:	0.1
+Version:	1.1.2
+Release:	0.2
 License:	GPL
 Group:		Libraries
-Source0:	http://cesnet.dl.sourceforge.net/sourceforge/mjpeg/%{name}-%{version}.tar.gz
-# Source0-md5:	2bd0ab82e1a87e5c0499ceef0f352759
+Source0:	http://dl.sourceforge.net/sourceforge/mjpeg/%{name}-%{version}.tar.gz
+# Source0-md5:	63d871b28cb1524b4cf088155688778d
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://mjpeg.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -17,18 +17,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description -l pl
 
 %prep
-%setup -q 
+%setup -q -n %{name}
 %patch0 -p1
 
 %build
-%configure2_13
+
+%configure
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_includedir},%{_bindir},%{_libdir},%{_mandir}/man1/}
 
-%{__make} install_real install-prog DESTDIR=$RPM_BUILD_ROOT
+%{__make} install install-prog DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT

@@ -1,0 +1,21 @@
+--- jpeg-mmx-0.1.4/makefile.cfg.orig	Thu Jan  3 17:43:45 2002
++++ jpeg-mmx-0.1.4/makefile.cfg	Mon Mar  3 00:57:41 2003
+@@ -9,15 +9,15 @@
+ VPATH = @srcdir@
+ 
+ # Where to install the programs and man pages.
+-prefix = @prefix@
+-exec_prefix = @exec_prefix@
++prefix = $(DESTDIR)@prefix@
++exec_prefix = $(DESTDIR)@exec_prefix@
+ bindir = $(exec_prefix)/bin
+ libdir = $(exec_prefix)/lib
+ includedir = $(prefix)/include
+ binprefix =
+ manprefix =
+ manext = 1
+-mandir = $(prefix)/man/man$(manext)
++mandir = $(prefix)/share/man/man$(manext)
+ 
+ # The name of your C compiler:
+ CC= @CC@

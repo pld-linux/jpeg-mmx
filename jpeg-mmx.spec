@@ -7,6 +7,7 @@ Release:	0.1
 License:	GPL
 Group:		Libraries
 Source0:	http://cesnet.dl.sourceforge.net/sourceforge/mjpeg/%{name}-%{version}.tar.gz
+# Source0-md5:	2bd0ab82e1a87e5c0499ceef0f352759
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://mjpeg.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

@@ -21,7 +21,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %patch0 -p1
 
 %build
-
 %configure
 
 %{__make}
@@ -30,7 +29,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_includedir},%{_bindir},%{_libdir},%{_mandir}/man1/}
 
-%{__make} install install-prog DESTDIR=$RPM_BUILD_ROOT
+%{__make} install install-prog \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -38,7 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README usage.doc wizard.doc change.log libjpeg.doc example.c structure.doc filelist.doc coderules.doc
-%{_includedir}
-%attr(755,root,root)%{_bindir}
-%{_libdir}
-%{_mandir}/man1/
+%{_includedir}/*
+%attr(755,root,root) %{_bindir}/*
+%{_libdir}/*
+%{_mandir}/man1/*

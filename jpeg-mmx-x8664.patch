@@ -5,7 +5,7 @@
  #endif
  /* And this for GNU compilers for x86 */
 -#if defined(__GNUC__) && defined(__i386__)
-+#if defined(__GNUC__) && defined(__i386__) && defined(__x86_64__)
++#if defined(__GNUC__) && defined(__i386__) || defined(__x86_64__)
  #define HAVE_MMX_ATT_MNEMONICS 
  #define SIMD_ALIGN 16
  #endif

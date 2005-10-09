@@ -15,6 +15,7 @@ Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-x8664.patch
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664}
 URL:		http://mjpeg.sourceforge.net/
+BuildRequires:	nasm
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

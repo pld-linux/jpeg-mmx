@@ -12,7 +12,7 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-0.1.6.tar.gz
 # Source0-md5:	9156c429bd8c4dea65c877c50ed89e15
 Patch0:		%{name}-DESTDIR.patch
-ExcludeArch:	amd64 ppc
+ExcludeArch:	amd64 ppc sparc alpha
 URL:		http://mjpeg.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

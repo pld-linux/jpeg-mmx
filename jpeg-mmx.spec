@@ -1,13 +1,16 @@
-# TODO: cleanups, desc, summary, source (?)
+# TODO
+# - cleanups, desc, summary, source (?)
+# - -devel, -progs sub packages?
+# - shared library?
 Summary:	jpeg mmx
 Summary(pl):	jpeg mmx
 Name:		jpeg-mmx
-Version:	1.1.2
-Release:	0.2
+Version:	1.1.6
+Release:	0.1
 License:	GPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/sourceforge/mjpeg/%{name}-%{version}.tar.gz
-# Source0-md5:	63d871b28cb1524b4cf088155688778d
+Source0:	http://dl.sourceforge.net/mjpeg/%{name}-0.1.6.tar.gz
+# Source0-md5:	9156c429bd8c4dea65c877c50ed89e15
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://mjpeg.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,7 +32,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_includedir},%{_bindir},%{_libdir},%{_mandir}/man1/}
 
-%{__make} install install-prog \
+%{__make} install-prog install_real \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean

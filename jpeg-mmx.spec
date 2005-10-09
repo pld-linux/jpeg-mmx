@@ -12,6 +12,7 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/mjpeg/%{name}-0.1.6.tar.gz
 # Source0-md5:	9156c429bd8c4dea65c877c50ed89e15
 Patch0:		%{name}-DESTDIR.patch
+ExcludeArch:	amd64 ppc
 URL:		http://mjpeg.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +31,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_includedir},%{_bindir},%{_libdir},%{_mandir}/man1/}
+install -d $RPM_BUILD_ROOT{%{_includedir},%{_bindir},%{_libdir},%{_mandir}/man1}
 
 %{__make} install-prog install_real \
 	DESTDIR=$RPM_BUILD_ROOT

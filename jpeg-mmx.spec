@@ -13,7 +13,7 @@ Source0:	http://dl.sourceforge.net/mjpeg/%{name}-0.1.6.tar.gz
 # Source0-md5:	9156c429bd8c4dea65c877c50ed89e15
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-x8664.patch
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon x8664
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664}
 URL:		http://mjpeg.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

@@ -14,6 +14,7 @@ Patch0:		%{name}-DESTDIR.patch
 # XXX: replace it with real x86_64 port or drop
 #Patch1:		%{name}-x8664.patch
 URL:		http://mjpeg.sourceforge.net/
+BuildRequires:	gcc >= 3.0
 BuildRequires:	nasm
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

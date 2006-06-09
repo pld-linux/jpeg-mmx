@@ -31,20 +31,29 @@ u¿ywaæ rozszerzenia MMX procesorów x86 (je¶li jest dostêpne).
 
 %package libs
 Summary:	Shared jpeg-mmx library
+Summary(pl):	Biblioteka wspó³dzielona jpeg-mmx
 Group:		Libraries
 
 %description libs
-Shared jpeg-mmx library
+Shared jpeg-mmx library.
+
+%description libs -l pl
+Biblioteka wspó³dzielona jpeg-mmx.
 
 %package devel
-Summary:	Headers for developing programs using libjpeg
+Summary:	Headers for developing programs using jpeg-mmx library
+Summary(pl):	Pliki nag³ówkowe do tworzenia programów z u¿yciem biblioteki jpeg-mmx
 Group:		Development/Libraries
-Requires:	%{name}-libs = %{version}
+Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
-The jpeg-mmx-devel package includes the header files and static
-libraries necessary for developing programs which will manipulate JPEG
-files using the libjpeg library.
+The jpeg-mmx-devel package includes the header files necessary for
+developing programs which will manipulate JPEG files using the
+jpeg-mmx library.
+
+%description devel -l pl
+Ten pakiet zawiera pliki nag³ówkowe potrzebne do tworzenia programów
+obrabiaj±cych pliki JPEG przy u¿yciu biblioteki jpeg-mmx.
 
 %prep
 %setup -q -n %{name}
@@ -55,7 +64,7 @@ files using the libjpeg library.
 %build
 %configure \
 	--enable-shared \
-	--disable-static \
+	--disable-static
 
 %{__make}
 
@@ -84,6 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}
+%attr(755,root,root) %{_libdir}/libjpeg-mmx.so
 %{_libdir}/libjpeg-mmx.la
-%{_libdir}/libjpeg-mmx.so
+%{_includedir}

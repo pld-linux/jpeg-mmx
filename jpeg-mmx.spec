@@ -4,15 +4,16 @@
 Summary:	libjpeg library with MMX support
 Summary(pl):	Biblioteka libjpeg z obs³ug± MMX
 Name:		jpeg-mmx
-Version:	1.1.6
-Release:	0.2
+Version:	0.1.6
+Release:	0.1
+Epoch:		1
 License:	GPL
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/mjpeg/%{name}-0.1.6.tar.gz
+Source0:	http://dl.sourceforge.net/mjpeg/%{name}-%{version}.tar.gz
 # Source0-md5:	9156c429bd8c4dea65c877c50ed89e15
 Patch0:		%{name}-DESTDIR.patch
 # XXX: replace it with real x86_64 port or drop
-#Patch1:		%{name}-x8664.patch
+#Patch1:	%{name}-x8664.patch
 URL:		http://mjpeg.sourceforge.net/
 BuildRequires:	gcc >= 5:3.0
 BuildRequires:	nasm
@@ -20,8 +21,8 @@ ExclusiveArch:	i586 i686 pentium3 pentium4 athlon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-jpeg-mmx is a modified version of IJG libjpeg library that can use
-MMX extension of x86 processors (if available).
+jpeg-mmx is a modified version of IJG libjpeg library that can use MMX
+extension of x86 processors (if available).
 
 %description -l pl
 jpeg-mmx to zmodyfikowana wersja biblioteki IJG libjpeg potrafi±ca
@@ -33,7 +34,6 @@ u¿ywaæ rozszerzenia MMX procesorów x86 (je¶li jest dostêpne).
 
 %build
 %configure
-
 %{__make}
 
 %install

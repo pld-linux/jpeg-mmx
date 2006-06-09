@@ -1,21 +1,41 @@
---- jpeg-mmx-0.1.4/makefile.cfg.orig	Thu Jan  3 17:43:45 2002
-+++ jpeg-mmx-0.1.4/makefile.cfg	Mon Mar  3 00:57:41 2003
+--- jpeg-mmx/makefile.cfg	2006-06-09 11:56:28.394285684 +0300
++++ jpeg-mmx/makefile.cfg	2006-06-09 12:06:17.347473859 +0300
 @@ -9,15 +9,15 @@
  VPATH = @srcdir@
  
  # Where to install the programs and man pages.
 -prefix = @prefix@
 -exec_prefix = @exec_prefix@
+-bindir = $(exec_prefix)/bin
+-libdir = $(exec_prefix)/lib
+-includedir = $(prefix)/include
 +prefix = $(DESTDIR)@prefix@
 +exec_prefix = $(DESTDIR)@exec_prefix@
- bindir = $(exec_prefix)/bin
- libdir = $(exec_prefix)/lib
- includedir = $(prefix)/include
++bindir = $(DESTDIR)@bindir@
++libdir = $(DESTDIR)@libdir@
++includedir = $(DESTDIR)@includedir@
  binprefix =
  manprefix =
  manext = 1
 -mandir = $(prefix)/man/man$(manext)
-+mandir = $(prefix)/share/man/man$(manext)
++mandir = $(DESTDIR)@mandir@/man$(manext)
  
  # The name of your C compiler:
  CC= @CC@
+@@ -172,7 +172,7 @@
+ 
+ # with libtool:
+ libjpeg-mmx.la: @A2K_DEPS@ $(LIBOBJECTS)
+-	$(LIBTOOL) --mode=link $(CC) -o libjpeg-mmx.la $(LIBOBJECTS) \
++	$(LIBTOOL) --mode=link "$(CC)" -o libjpeg-mmx.la $(LIBOBJECTS) \
+ 		-rpath $(libdir) -version-info $(JPEG_LIB_VERSION)
+ 
+ # sample programs:
+@@ -251,6 +251,7 @@
+ 
+ 
+ %.o: %.s ; 	$(AS) $(ASFLAGS) -o $@ $<
++%.lo: %.s ; 	$(AS) $(ASFLAGS) -o $@ $< ; cp $@ $(patsubst %.lo, %.o, $@)
+ 
+ # Mistake catcher:
+ 

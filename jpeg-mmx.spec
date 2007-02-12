@@ -1,5 +1,5 @@
 Summary:	libjpeg library with MMX support
-Summary(pl):	Biblioteka libjpeg z obs³ug± MMX
+Summary(pl.UTF-8):   Biblioteka libjpeg z obsÅ‚ugÄ… MMX
 Name:		jpeg-mmx
 Version:	0.1.6
 Release:	0.1
@@ -25,24 +25,24 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 jpeg-mmx is a modified version of IJG libjpeg library that can use MMX
 extension of x86 processors (if available).
 
-%description -l pl
-jpeg-mmx to zmodyfikowana wersja biblioteki IJG libjpeg potrafi±ca
-u¿ywaæ rozszerzenia MMX procesorów x86 (je¶li jest dostêpne).
+%description -l pl.UTF-8
+jpeg-mmx to zmodyfikowana wersja biblioteki IJG libjpeg potrafiÄ…ca
+uÅ¼ywaÄ‡ rozszerzenia MMX procesorÃ³w x86 (jeÅ›li jest dostÄ™pne).
 
 %package libs
 Summary:	Shared jpeg-mmx library
-Summary(pl):	Biblioteka wspó³dzielona jpeg-mmx
+Summary(pl.UTF-8):   Biblioteka wspÃ³Å‚dzielona jpeg-mmx
 Group:		Libraries
 
 %description libs
 Shared jpeg-mmx library.
 
-%description libs -l pl
-Biblioteka wspó³dzielona jpeg-mmx.
+%description libs -l pl.UTF-8
+Biblioteka wspÃ³Å‚dzielona jpeg-mmx.
 
 %package devel
 Summary:	Headers for developing programs using jpeg-mmx library
-Summary(pl):	Pliki nag³ówkowe do tworzenia programów z u¿yciem biblioteki jpeg-mmx
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe do tworzenia programÃ³w z uÅ¼yciem biblioteki jpeg-mmx
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -51,9 +51,9 @@ The jpeg-mmx-devel package includes the header files necessary for
 developing programs which will manipulate JPEG files using the
 jpeg-mmx library.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe potrzebne do tworzenia programów
-obrabiaj±cych pliki JPEG przy u¿yciu biblioteki jpeg-mmx.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nagÅ‚Ã³wkowe potrzebne do tworzenia programÃ³w
+obrabiajÄ…cych pliki JPEG przy uÅ¼yciu biblioteki jpeg-mmx.
 
 %prep
 %setup -q -n %{name}

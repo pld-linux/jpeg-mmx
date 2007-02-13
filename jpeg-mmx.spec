@@ -1,5 +1,5 @@
 Summary:	libjpeg library with MMX support
-Summary(pl.UTF-8):   Biblioteka libjpeg z obsługą MMX
+Summary(pl.UTF-8):	Biblioteka libjpeg z obsługą MMX
 Name:		jpeg-mmx
 Version:	0.1.6
 Release:	0.1
@@ -31,7 +31,7 @@ używać rozszerzenia MMX procesorów x86 (jeśli jest dostępne).
 
 %package libs
 Summary:	Shared jpeg-mmx library
-Summary(pl.UTF-8):   Biblioteka współdzielona jpeg-mmx
+Summary(pl.UTF-8):	Biblioteka współdzielona jpeg-mmx
 Group:		Libraries
 
 %description libs
@@ -42,7 +42,7 @@ Biblioteka współdzielona jpeg-mmx.
 
 %package devel
 Summary:	Headers for developing programs using jpeg-mmx library
-Summary(pl.UTF-8):   Pliki nagłówkowe do tworzenia programów z użyciem biblioteki jpeg-mmx
+Summary(pl.UTF-8):	Pliki nagłówkowe do tworzenia programów z użyciem biblioteki jpeg-mmx
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
